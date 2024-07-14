@@ -1,8 +1,8 @@
 import {PrismaClient, Product} from '@prisma/client'
-import { ProductCreateDTO } from '../../../shared/DTOs/ProductsDTOs/create-product.dto'
+import { ProductCreate } from '../../models/Product/create-product'
 const prisma = new PrismaClient()
 
-export const CreateProvider = async (productCreateDTO: ProductCreateDTO): Promise<Error | Product> => {
+export const CreateProvider = async (productCreateDTO: ProductCreate): Promise<Error | Product> => {
     try {
         const newProduct = await prisma.product.create({ data: productCreateDTO })
         return newProduct

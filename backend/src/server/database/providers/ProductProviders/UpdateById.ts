@@ -1,8 +1,8 @@
 import { PrismaClient, Product } from "@prisma/client"
-import { ProductUpdateDTO } from "../../../shared/DTOs/ProductsDTOs/update-product.dto"
+import { ProductUpdate } from "../../models/Product/update-product"
 const prisma = new PrismaClient()
 
-export const UpdateByIdProvider = async (id: string, productUpdateDTO: ProductUpdateDTO): Promise<Error | Product> => {
+export const UpdateByIdProvider = async (id: string, productUpdateDTO: ProductUpdate): Promise<Error | Product> => {
     try {
         const updatedProduct = await prisma.product.update({ where: { id }, data: productUpdateDTO })
         return updatedProduct
