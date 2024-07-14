@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "prisma": {
+    "schema": "src/database/schema.prisma",
+    "migrations": "src/database/migrations/"
+  },
   "dependencies": {
     "@prisma/client": "^5.16.2",
     "express": "^4.19.2",
