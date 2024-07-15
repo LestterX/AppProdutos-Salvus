@@ -7,7 +7,7 @@ export const CreateProvider = async (productCreateDTO: ProductCreate): Promise<E
         const newProduct = await prisma.product.create({ data: productCreateDTO })
         return newProduct
     } catch (error) {
-        console.log('An Error occurred during product \n', error)
+        console.log('An Error occurred during product create \n', error)
         return new Error('An Error occurred during product create')
     }
 }

@@ -5,10 +5,11 @@ import { ProductSearchQueriesProps } from '../../shared/product-search-queries'
 const serverResponses = new ServerResponses()
 
 export const GetAllProductsController = async (req: Request<{}, {}, {}, ProductSearchQueriesProps>, res: Response): Promise<Response> => {
+    const errors: Array<String> = []
+
     const products = await ProductProviders.GetAllProvider({ filter: req.query.filter || '', limit: req.query.limit || 7, page: req.query.page || 1, orderBy: req.query.orderBy || 'asc' })
     const productsCountByFilter = await ProductProviders.countProvider(req.query.filter)
 
-    const errors: Array<String> = []
     if (products instanceof Error) { errors.push(products.message) }
     if (productsCountByFilter instanceof Error) { errors.push(productsCountByFilter.message) }
 
