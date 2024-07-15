@@ -4,17 +4,15 @@
 - NodeJs (v20.13.1)
 - Yarn (v1.22.22)
 
-### Instalation
+### Installation
 
 #### Docker
 
-You can start the database locally by going to the backend project directory and simply running: 
-    
-    ```sh
+You can start the database locally by going to the backend project directory and simply running:
+    ```
     docker compose up -d
     ```
-
-This will start a docker contianer for a **PostgreeSQL database**
+This will start a docker container for a **PostgreeSQL database**
 
 >**NOTE:** If you change the database setting in the env file you'll alse need to change in the compose.yaml
 
