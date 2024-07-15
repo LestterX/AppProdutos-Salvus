@@ -8,8 +8,8 @@ export const GetAllProvider = async (productSearchQueriesProps: ProductSearchQue
     try {
         const products: Array<Product> = await prisma.product.findMany({
             where: { name: { contains: filter } },
-            take: limit ? limit : 7,
-            skip: ((page ? page : 1) - 1) * (limit ? limit : 7),
+            take: Number(limit ? limit : 7),
+            skip: ((Number(page ? page : 1)) - 1) * (Number(limit ? limit : 7)),
             orderBy: {
                 name: orderBy,
             },

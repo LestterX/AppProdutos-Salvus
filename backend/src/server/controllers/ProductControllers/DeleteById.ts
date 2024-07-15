@@ -13,7 +13,7 @@ export const DeleteProductByIdController = async (req: Request<{ id: string }>, 
             },
         })
     }
-    return await serverResponses.created(res, {
+    return await serverResponses.ok(res, {
         message: 'Product deleted successfully',
         deletedProduct
     })

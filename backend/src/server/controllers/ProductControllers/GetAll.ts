@@ -22,7 +22,7 @@ export const GetAllProductsController = async (req: Request<{}, {}, {}, ProductS
     res.setHeader('access-control-expose-headers', 'x-total-count')
     res.setHeader('x-total-count', String(productsCountByFilter))
 
-    return await serverResponses.created(res, {
+    return await serverResponses.ok(res, {
         message: 'Products found successfully',
         xTotalCount: productsCountByFilter,
         products

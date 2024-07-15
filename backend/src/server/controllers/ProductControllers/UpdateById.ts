@@ -16,7 +16,7 @@ export const UpdateProductController = async (req: Request<{ id: string }, {}, I
             },
         })
     }
-    return await serverResponses.created(res, {
+    return await serverResponses.ok(res, {
         message: 'Product updated successfully',
         updatedProduct
     })

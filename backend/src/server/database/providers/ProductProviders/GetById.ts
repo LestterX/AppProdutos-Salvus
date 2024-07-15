@@ -7,6 +7,6 @@ export const GetByIdProvider = async (id: string): Promise<Error | Product | nul
         return product
     } catch (error) {
         console.log('An Error occurred during product update \n', error)
-        return new Error('An Error occurred during product update')
+        return new Error('An Error occurred during product search')
     }
 }
