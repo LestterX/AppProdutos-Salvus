@@ -1,12 +1,23 @@
 import { PlusCircle, X } from "@phosphor-icons/react";
 import * as Dialog from '@radix-ui/react-dialog'
 import { useState } from "react";
+import { Create } from "../../api/post/Crete";
 
 function CreateForm() {
     const [formValues, setFormValues] = useState({ name: '', price: '', description: '' })
-    const onFormInputChange = (key: string, value: string) => { setFormValues({ ...formValues, [key]: value }); }
+    const onFormInputChange = (key: string, value: string) => { setFormValues({ ...formValues, [key]: value.toLocaleLowerCase() }); }
     const onFormSubmit = () => {
         console.log('Form Values: ', formValues);
+        const createProduct = async () => {
+            try {
+                const response = await Create(formValues)
+                if (response?.status === 201) { console.log('Criado: ', response.data); }
+                return
+            } catch (error) {
+                console.log('An error occurred', error);
+            }
+        }
+        createProduct()
     }
     return (
         <>
