@@ -2,25 +2,32 @@ import { PlusCircle, X } from "@phosphor-icons/react";
 import * as Dialog from '@radix-ui/react-dialog'
 import { useState } from "react";
 import { Create } from "../../api/post/Crete";
+import SplashMessage from '../SplashMessages/SplashMessage'
+
+const initialFormValues = { name: '', price: '', description: '' }
 
 function CreateForm() {
-    const [formValues, setFormValues] = useState({ name: '', price: '', description: '' })
+    const [formValues, setFormValues] = useState(initialFormValues)
+    const [splashSuccess, setSplashSuccess] = useState<boolean>(false)
+    const [splashError, setSplashError] = useState<boolean>(false)
     const onFormInputChange = (key: string, value: string) => { setFormValues({ ...formValues, [key]: value.toLocaleLowerCase() }); }
     const onFormSubmit = () => {
         console.log('Form Values: ', formValues);
         const createProduct = async () => {
             try {
                 const response = await Create(formValues)
-                if (response?.status === 201) { console.log('Criado: ', response.data); }
-                return
+                if (response?.status === 201) { console.log('Criado: ', response.data); setSplashSuccess(true); }
+                setSplashError(true)
             } catch (error) {
                 console.log('An error occurred', error);
+                setSplashError(true)
             }
         }
         createProduct()
     }
     return (
         <>
+            {splashSuccess && <SplashMessage title="" description="" type={'success'} /> || splashError && <SplashMessage title="" description="" type={'error'} />}
             <Dialog.Root>
                 <Dialog.Trigger asChild>
                     <section className="flex flex-row gap-1 bg-green-400 p-2 rounded-md hover:bg-green-600 hover:cursor-pointer">
