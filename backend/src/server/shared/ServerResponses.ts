@@ -9,7 +9,7 @@ export class ServerResponses {
   
     async created(res: Response, data: object): Promise<Response> {
       console.log(data);
-      return res.status(StatusCodes.CREATED).json({ ...data, statusCode: 202 });
+      return res.status(StatusCodes.CREATED).json({ ...data, statusCode: 201 });
     }
   
     async internalServerError(res: Response, data: object): Promise<Response> {

@@ -33,11 +33,12 @@ function ProductsTable() {
                         <td className="font-bold">NOME</td>
                         <td className="font-bold">DESCRIÇÃO</td>
                         <td className="font-bold">VALOR</td>
+                        <td className="font-bold">EDITAR</td>
                     </tr>
                 </thead>
                 <tbody>
                     {products && products.map(product => {
-                        return (<ProductItem key={product.id} name={product.name} description={product.description} price={product.price} />)
+                        return (<ProductItem key={product.id} id={product.id} name={product.name} description={product.description} price={product.price} />)
                     })}
                 </tbody>
             </table>
