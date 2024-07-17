@@ -10,7 +10,8 @@
   "scripts": {
     "build": "tsc",
     "start": "npm run build && node dist/index.js",
-    "dev": "ts-node-dev src/index.ts --respawn --compileOnly"
+    "dev": "ts-node-dev src/index.ts --respawn --compileOnly",
+    "deploy": "npm install && npx prisma migrate deploy && npx prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.16.2",
