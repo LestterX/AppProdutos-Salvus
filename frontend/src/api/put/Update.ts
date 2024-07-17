@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Product } from "../../models/ProductModel";
 
-const BACKEND_URL = import.meta.env.BACKEND_URL || "http://localhost:3000"
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000"
 
 
 export const Update = async (id: string | undefined, data: Product) => {
