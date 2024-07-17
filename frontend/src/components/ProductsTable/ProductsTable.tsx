@@ -47,10 +47,10 @@ function ProductsTable() {
                     </table>
                 </ScrollArea.Viewport>
                 <ScrollArea.Scrollbar orientation="vertical" className="p-1 bg-gray-400">
-                    <ScrollArea.Thumb className="p-1 bg-gray-700" />
+                    <ScrollArea.Thumb className="p-1 bg-gray-700 hover:cursor-grab" />
                 </ScrollArea.Scrollbar>
-                <ScrollArea.Scrollbar orientation="horizontal">
-                    <ScrollArea.Thumb />
+                <ScrollArea.Scrollbar orientation="horizontal" className="p-1 bg-gray-400">
+                    <ScrollArea.Thumb className="p-1 bg-gray-700 hover:cursor-grab" />
                 </ScrollArea.Scrollbar>
             </ScrollArea.Root>
         </>
