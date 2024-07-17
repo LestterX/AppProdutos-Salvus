@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "prisma": {
-    "schema": "src/database/schema.prisma",
-    "migrations": "src/database/migrations/"
+    "schema": "src/server/database/schema.prisma",
+    "migrations": "src/server/database/migrations/"
   },
   "scripts": {
     "build": "tsc",
