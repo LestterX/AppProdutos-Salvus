@@ -30,7 +30,7 @@ function CreateForm() {
             {splashSuccess && <SplashMessage title="" description="" type={'success'} /> || splashError && <SplashMessage title="" description="" type={'error'} />}
             <Dialog.Root>
                 <Dialog.Trigger asChild>
-                    <section className="flex flex-row gap-1 bg-green-400 p-2 rounded-md hover:bg-green-600 hover:cursor-pointer">
+                    <section className="flex flex-row gap-1 bg-green-400 p-2 rounded-md mr-2 hover:bg-green-600 hover:cursor-pointer">
                         <button className="font-bold text-white">NOVO</button>
                         <PlusCircle size={24} color="white" />
                     </section>

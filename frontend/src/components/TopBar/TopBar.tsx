@@ -13,7 +13,7 @@ function TopBar() {
     return (
         <>
             <section className="flex justify-center items-center w-full max-w-5xl mx-auto my-0 h-full gap-4">
-                <input onChange={handleInputSearch} autoFocus type="text" name="" id="" className="w-full h-10" />
+                <input onChange={handleInputSearch} autoFocus type="text" name="" id="" className="w-full h-10 ml-2" />
                 <FilterArea />
                 <CreateForm />
             </section>

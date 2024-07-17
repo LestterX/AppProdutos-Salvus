@@ -4,7 +4,7 @@ import { SearchContext } from "./SearchContext"
 
 export const SearchProvider = ({ children }: { children: React.ReactNode }) => {
     const [searchFilter, setSearchFilter] = useState('')
-    const [searchLimit, setSearchLimit] = useState(7)
+    const [searchLimit, setSearchLimit] = useState(30)
     const [searchPage, setSearchPage] = useState(1)
     const [searchOrderBy, setSearchOrderBy] = useState<'asc' | 'desc'>('asc')
     return (
