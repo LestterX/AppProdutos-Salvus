@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const BACKEND_URL = import.meta.env.BACKEND_URL || "http://localhost:3000"
-
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000"
 
 export const GetAll = async (searchFilter?: string, searchLimit?:number, searchPage?:number, searchOrderBy?: string) => {
     try {
