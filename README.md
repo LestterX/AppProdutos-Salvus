@@ -11,7 +11,14 @@ This fullstack system was built to demonstrate the usage of these technologies f
 ### Documentation
 
 - Backend: [Docs for the backend server](https://github.com/LestterX/AppProdutos-Salvus/blob/main/backend/README.md)
+
+You can access the backend on: https://appprodutos-salvus.onrender.com.
+It might take a minute to load, because of render platform free tier
+
 - Frontend: [Docs for the frontend server](https://github.com/LestterX/AppProdutos-Salvus/blob/main/frontend/README.md)
+
+You can access the frontend on: https://app-produtos-salvus.vercel.app.
+If the products doesn't show up, please wait a minute or so to reload the page, this is because the backend is on Render platform free tier
 
 >**NOTE:** Theses docs are first updated on the branch DEV
 
