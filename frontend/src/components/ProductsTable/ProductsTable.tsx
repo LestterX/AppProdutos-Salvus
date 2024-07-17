@@ -31,7 +31,7 @@ function ProductsTable() {
             <ScrollArea.Root>
                 <ScrollArea.Viewport className="w-full h-screen">
                     <table className="w-11/12 my-0 mx-auto">
-                        <thead className="bg-slate-600 border-slate-600 rounded-lg ">
+                        <thead className="bg-slate-500 rounded-lg text-white">
                             <tr>
                                 <td className="font-bold">NOME</td>
                                 <td className="font-bold">DESCRIÇÃO</td>
