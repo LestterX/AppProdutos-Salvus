@@ -3,6 +3,7 @@ import { GetAll } from "../../api/get/GetAll";
 import { Product } from "../../models/ProductModel";
 import ProductItem from "../ProductItem/ProductItem";
 import { SearchContext } from "../../context/SearchContext";
+import * as ScrollArea from '@radix-ui/react-scroll-area';
 
 function ProductsTable() {
     const [products, setProducts] = useState<Product[]>([])
@@ -27,21 +28,31 @@ function ProductsTable() {
     }, [searchFilterDeffered, searchLimitDeffered, searchOrderByDeffered, searchPageDeffered])
     return (
         <>
-            <table className="w-11/12 my-0 mx-auto">
-                <thead className="bg-slate-600 border-slate-600 rounded-lg ">
-                    <tr>
-                        <td className="font-bold">NOME</td>
-                        <td className="font-bold">DESCRIÇÃO</td>
-                        <td className="font-bold">VALOR</td>
-                        <td className="font-bold">EDITAR</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    {products && products.map(product => {
-                        return (<ProductItem key={product.id} id={product.id} name={product.name} description={product.description} price={product.price} />)
-                    })}
-                </tbody>
-            </table>
+            <ScrollArea.Root>
+                <ScrollArea.Viewport className="w-full h-screen">
+                    <table className="w-11/12 my-0 mx-auto">
+                        <thead className="bg-slate-600 border-slate-600 rounded-lg ">
+                            <tr>
+                                <td className="font-bold">NOME</td>
+                                <td className="font-bold">DESCRIÇÃO</td>
+                                <td className="font-bold">VALOR</td>
+                                <td className="font-bold">EDITAR</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {products && products.map(product => {
+                                return (<ProductItem key={product.id} id={product.id} name={product.name} description={product.description} price={product.price} />)
+                            })}
+                        </tbody>
+                    </table>
+                </ScrollArea.Viewport>
+                <ScrollArea.Scrollbar orientation="vertical" className="p-1 bg-gray-400">
+                    <ScrollArea.Thumb className="p-1 bg-gray-700" />
+                </ScrollArea.Scrollbar>
+                <ScrollArea.Scrollbar orientation="horizontal">
+                    <ScrollArea.Thumb />
+                </ScrollArea.Scrollbar>
+            </ScrollArea.Root>
         </>
     );
 }
